@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kedu.commons.EncryptionUtils;
+import com.kedu.dao.MemberDAO;
 import com.kedu.dto.MemberDTO;
 
 @Controller
@@ -30,6 +31,6 @@ public class RegisterController {
 	@ResponseBody
 	@RequestMapping("/idcheck")
 	public boolean idcheck(String id) throws Exception {
-	    return dao.IdCheck(id);
+	    return dao.idCheck(id);
 	}
 }

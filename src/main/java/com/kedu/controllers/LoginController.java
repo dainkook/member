@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.kedu.commons.EncryptionUtils;
+import com.kedu.dao.MemberDAO;
 
 @Controller
 @RequestMapping("/member")
