@@ -18,4 +18,10 @@ public class MyPageController {
 		model.addAttribute("list", dao.listAll(dto));
 		return "mypage";
 	}
+	@RequestMapping("/update")
+	public String update( MemberDTO dto) {
+		dao.update(dto);
+
+		return "redirect:/mypage";
+	}
 }
