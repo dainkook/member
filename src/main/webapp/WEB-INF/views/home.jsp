@@ -166,6 +166,10 @@ h2 {
 </style>
 </head>
 <body>
+<<<<<<< HEAD
+=======
+	<img src="/upload/img.png">
+>>>>>>> 6858ff6d66bc97c21def77960ad003c98907ed5e
 	<c:choose>
 		<c:when test="${loginId != null}">
 			<div class="container">
