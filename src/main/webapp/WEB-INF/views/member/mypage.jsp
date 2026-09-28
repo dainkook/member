@@ -114,7 +114,7 @@ body {
 <body>
 
 <div class="container">
-
+	<form action="/member/update">
     <div class="title">
         <h1>마이페이지</h1>
         <p>회원 정보를 확인할 수 있습니다.</p>
@@ -128,59 +128,68 @@ body {
 
             <div class="item">
                 <label>아이디</label>
-                <input type="text" name="id" readonly>
+                <input type="text" name="id" readonly value="${id}">
             </div>
 
             <div class="item">
                 <label>이름</label>
-                <input type="text" name="name" readonly>
+                <input type="text" id="name" name="name" readonly value="${name}">
             </div>
 
             <div class="item">
                 <label>전화번호</label>
-                <input type="text" name="phone" readonly>
+                <input type="text" id="phone" name="phone" readonly value="${phone}">
             </div>
 
             <div class="item">
                 <label>이메일</label>
-                <input type="text" name="email" readonly>
+                <input type="text" id="email" name="email" readonly value="${email}">
             </div>
 
             <div class="item">
                 <label>비밀번호</label>
-                <input type="password" name="pw" readonly>
+                <input type="password" name="pw" readonly value="${pw}">
             </div>
 
             <div class="item">
                 <label>가입일</label>
-                <input type="text" name="regdate" readonly>
+                <input type="text" name="regdate" readonly value="${regdate}">
             </div>
 
             <div class="item">
                 <label>우편번호</label>
-                <input type="text" name="zipcode" readonly>
+                <input type="text" name="zipcode" readonly value="${zipcode}">
             </div>
 
             <div class="item">
                 <label>주소</label>
-                <input type="text" name="address1" readonly>
+                <input type="text" name="address1" readonly value="${address1}">
             </div>
 
             <div class="item full">
                 <label>상세주소</label>
-                <input type="text" name="address2" readonly>
+                <input type="text" name="address2" readonly value="${address2}">
             </div>
 
         </div>
 
         <div class="bottom">
-            <button type="button">수정</button>
-            <button type="button">회원탈퇴</button>
+        
+            <button id="update" type="submit">수정</button>
+            <button id="delete" type="button">회원탈퇴</button>
         </div>
-
     </div>
-
+	</form>
 </div>
-
+<script>
+	$("#update").on("click", function() {
+		$("#name").prop("readonly", "false");
+		$("#phone").prop("readonly", "false");
+		$("#email").prop("readonly", "false");
+	});
+	$("#delete").on("click", function() {
+		href="/member/delete";
+	});
+</script>
 </body>
 </html>

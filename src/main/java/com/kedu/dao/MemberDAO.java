@@ -42,4 +42,9 @@ public class MemberDAO {
 				new BeanPropertyRowMapper<>(MemberDTO.class), 
 				id, pw).isEmpty();
 	}
+	
+	public MemberDTO listAll(String id) {
+		String sql = "select * from members where id=?";
+		return jdbc.queryForObject(sql, new BeanPropertyRowMapper<>(MemberDTO.class), id);
+	}
 }
