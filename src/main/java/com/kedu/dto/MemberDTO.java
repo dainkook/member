@@ -100,9 +100,5 @@ public class MemberDTO {
 	public void setRegdate(Timestamp regdate) {
 		this.regdate = regdate;
 	}
-	
-	
-	
-	
 
 }
