@@ -42,6 +42,9 @@ public class MemberDAO {
 				new BeanPropertyRowMapper<>(MemberDTO.class), 
 				id, pw).isEmpty();
 	}
+	public int update(MemberDTO dto) {
+		String sql= "update members set pw=?, name=?, phone=?, email=?, zipcode=?, address1=?, address2=? where id=?";
+		return jdbc.update(sql ,dto.getPw(),dto.getName(),dto.getPhone(), dto.getEmail(),dto.getZipcode(), dto.getAddress1(),dto.getAddress2(),dto.getId());
 	
 	public MemberDTO listAll(String id) {
 		String sql = "select * from members where id=?";

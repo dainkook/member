@@ -22,4 +22,10 @@ public class MyPageController {
 		model.addAttribute("list", dao.listAll(id));
 		return "mypage";
 	}
+	@RequestMapping("/update")
+	public String update( MemberDTO dto) {
+		dao.update(dto);
+
+		return "redirect:/mypage";
+	}
 }
