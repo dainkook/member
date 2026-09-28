@@ -136,7 +136,7 @@ h2 {
 	background-color: #222;
 }
 
-.withdrawbtn {
+.deletebtn {
 	width: 100%;
 	height: 45px;
 	border: none;
@@ -147,7 +147,7 @@ h2 {
 	cursor: pointer;
 }
 
-.withdrawbtn:hover {
+.deletebtn:hover {
 	background-color: #c74747;
 }
 
@@ -187,8 +187,8 @@ h2 {
 						<form action="/member/logout">
 							<button type="submit" onclick="return confirm('로그아웃을 하시겠습니까?');">로그아웃</button>
 						</form>
-						<form action="/member/withdraw">
-							<button type="submit" class="withdrawbtn"
+						<form action="/member/delete">
+							<button type="submit" class="deletebtn"
 								onclick="return confirm('회원을 정말 탈퇴하시겠습니까?');">회원 탈퇴</button>
 						</form>
 					</div>
