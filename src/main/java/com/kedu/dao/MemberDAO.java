@@ -29,17 +29,22 @@ public class MemberDAO {
 	}
 	
 	public boolean idCheck(String id) {
-		String sql = "SELECT COUNT(*) FROM members WHERE id = ?";
+		String sql = "SELECT COUNT(*) FROM member WHERE id = ?";
 		
 		int count = jdbc.queryForObject(sql, Integer.class, id);
 		return count > 0 ;
 	}
 	
 	public boolean login(String id, String pw) {
-		String sql = "select * from members where id=? and pw = ?";
+		String sql = "select * from member where id=? and pw = ?";
 		
 		return !jdbc.query(sql, 
 				new BeanPropertyRowMapper<>(MemberDTO.class), 
 				id, pw).isEmpty();
+	}
+	
+	public int delete(String id) {
+		String sql = "delete from member where id = ?";
+		return jdbc.update(sql, id);
 	}
 }
