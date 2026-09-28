@@ -17,8 +17,9 @@ public class MyPageController {
 	MemberDAO dao;
 	
 	@RequestMapping("/mypage")
-	public String mypage (MemberDTO dto, HttpSession session, Model model) {		
-		model.addAttribute("list", dao.listAll(dto));
+	public String mypage (MemberDTO dto, HttpSession session, Model model) {
+		String id = (String)session.getAttribute("loginId");
+		model.addAttribute("list", dao.listAll(id));
 		return "mypage";
 	}
 	
