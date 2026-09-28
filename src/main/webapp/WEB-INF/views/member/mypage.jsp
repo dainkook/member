@@ -175,7 +175,7 @@ body {
 
         <div class="bottom">
             <button type="button">수정</button>
-            <button type="button" onclick="deleteMember()">회원탈퇴</button>
+            <button type="button">회원탈퇴</button>
         </div>
 
     </div>
@@ -184,11 +184,4 @@ body {
 
 </body>
 
-	<script>
-		function deleteMember() {
-			if(confirm("정말 회원탈퇴 하시겠습니까?")) {
-				location.href = "/delete";
-			}
-		}
-	</script>
 </html>
