@@ -43,9 +43,15 @@ public class MemberDAO {
 				id, pw).isEmpty();
 	}
 
+
 	public int delete(String id) {
 		String sql = "delete from member where id = ?";
 		return jdbc.update(sql, id);
+	}
+
+	public int update(MemberDTO dto) {
+		String sql= "update members set pw=?, name=?, phone=?, email=?, zipcode=?, address1=?, address2=? where id=?";
+		return jdbc.update(sql ,dto.getPw(),dto.getName(),dto.getPhone(), dto.getEmail(),dto.getZipcode(), dto.getAddress1(),dto.getAddress2(),dto.getId());
 	}
 	
 	public MemberDTO listAll(String id) {
