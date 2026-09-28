@@ -28,6 +28,7 @@ public class MyPageController {
 	public String delete(HttpSession session) {
 		String id = (String) session.getAttribute("loginId");
 		dao.delete(id);
+		session.invalidate();
 		return "redirect:/";
 	}
 	
