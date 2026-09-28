@@ -1,111 +1,114 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%> 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> <!DOCTYPE html> <html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
 <head>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    background-color: #f5f6f8;
-    font-family: Arial, sans-serif;
-    color: #333;
+	margin: 0;
+	background-color: #f5f6f8;
+	font-family: Arial, sans-serif;
+	color: #333;
 }
 
 .container {
-    width: 750px;
-    margin: 70px auto;
+	width: 750px;
+	margin: 70px auto;
 }
 
 .title {
-    margin-bottom: 25px;
+	margin-bottom: 25px;
 }
 
 .title h1 {
-    margin: 0;
-    font-size: 28px;
+	margin: 0;
+	font-size: 28px;
 }
 
 .title p {
-    margin: 8px 0 0;
-    color: #888;
-    font-size: 14px;
+	margin: 8px 0 0;
+	color: #888;
+	font-size: 14px;
 }
 
 .profile {
-    background-color: white;
-    border: 1px solid #e2e2e2;
-    border-radius: 12px;
-    padding: 35px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+	background-color: white;
+	border: 1px solid #e2e2e2;
+	border-radius: 12px;
+	padding: 35px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .profile h2 {
-    margin: 0 0 30px;
-    font-size: 19px;
+	margin: 0 0 30px;
+	font-size: 19px;
 }
 
 .info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 22px 25px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 22px 25px;
 }
 
 .item {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
 }
 
 .item.full {
-    grid-column: 1 / 3;
+	grid-column: 1/3;
 }
 
 .item label {
-    font-size: 13px;
-    font-weight: bold;
-    color: #666;
+	font-size: 13px;
+	font-weight: bold;
+	color: #666;
 }
 
 .item input {
-    width: 100%;
-    height: 42px;
-    padding: 0 12px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    background-color: #f8f9fa;
-    font-size: 14px;
-    color: #333;
-    outline: none;
+	width: 100%;
+	height: 42px;
+	padding: 0 12px;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	background-color: #f8f9fa;
+	font-size: 14px;
+	color: #333;
+	outline: none;
 }
 
 .item input:focus {
-    background-color: white;
-    border-color: #999;
+	background-color: white;
+	border-color: #999;
 }
 
 .bottom {
-    margin-top: 30px;
-    padding-top: 25px;
-    border-top: 1px solid #eee;
-    text-align: right;
+	margin-top: 30px;
+	padding-top: 25px;
+	border-top: 1px solid #eee;
+	text-align: right;
 }
 
 .bottom button {
-    padding: 10px 20px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    background-color: white;
-    cursor: pointer;
+	padding: 10px 20px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	background-color: white;
+	cursor: pointer;
 }
 
 .bottom button:hover {
-    background-color: #f3f3f3;
+	background-color: #f3f3f3;
 }
 </style>
 
@@ -113,84 +116,84 @@ body {
 
 <body>
 
-<div class="container">
-	<form action="/member/update">
-    <div class="title">
-        <h1>마이페이지</h1>
-        <p>회원 정보를 확인할 수 있습니다.</p>
-    </div>
+	<div class="container">
+		<form action="/member/update">
+			<div class="title">
+				<h1>마이페이지</h1>
+				<p>회원 정보를 확인할 수 있습니다.</p>
+			</div>
 
-    <div class="profile">
+			<div class="profile">
 
-        <h2>회원 정보</h2>
+				<h2>회원 정보</h2>
 
-        <div class="info">
+				<div class="info">
 
-            <div class="item">
-                <label>아이디</label>
-                <input type="text" name="id" readonly value="${id}">
-            </div>
+					<div class="item">
+						<label>아이디</label> <input type="text" name="id" readonly
+							value="${id}">
+					</div>
 
-            <div class="item">
-                <label>이름</label>
-                <input type="text" id="name" name="name" readonly value="${name}">
-            </div>
+					<div class="item">
+						<label>이름</label> <input type="text" id="name" name="name"
+							readonly value="${name}">
+					</div>
 
-            <div class="item">
-                <label>전화번호</label>
-                <input type="text" id="phone" name="phone" readonly value="${phone}">
-            </div>
+					<div class="item">
+						<label>전화번호</label> <input type="text" id="phone" name="phone"
+							readonly value="${phone}">
+					</div>
 
-            <div class="item">
-                <label>이메일</label>
-                <input type="text" id="email" name="email" readonly value="${email}">
-            </div>
+					<div class="item">
+						<label>이메일</label> <input type="text" id="email" name="email"
+							readonly value="${email}">
+					</div>
 
-            <div class="item">
-                <label>비밀번호</label>
-                <input type="password" name="pw" readonly value="${pw}">
-            </div>
+					<div class="item">
+						<label>비밀번호</label> <input type="password" name="pw" readonly
+							value="${pw}">
+					</div>
 
-            <div class="item">
-                <label>가입일</label>
-                <input type="text" name="regdate" readonly value="${regdate}">
-            </div>
+					<div class="item">
+						<label>가입일</label> <input type="text" name="regdate" readonly
+							value="${regdate}">
+					</div>
 
-            <div class="item">
-                <label>우편번호</label>
-                <input type="text" name="zipcode" readonly value="${zipcode}">
-            </div>
+					<div class="item">
+						<label>우편번호</label> <input type="text" name="zipcode" readonly
+							value="${zipcode}">
+					</div>
 
-            <div class="item">
-                <label>주소</label>
-                <input type="text" name="address1" readonly value="${address1}">
-            </div>
+					<div class="item">
+						<label>주소</label> <input type="text" name="address1" readonly
+							value="${address1}">
+					</div>
 
-            <div class="item full">
-                <label>상세주소</label>
-                <input type="text" name="address2" readonly value="${address2}">
-            </div>
+					<div class="item full">
+						<label>상세주소</label> <input type="text" name="address2" readonly
+							value="${address2}">
+					</div>
 
-        </div>
+				</div>
 
-        <div class="bottom">
-        
-            <button id="update" type="submit">수정</button>
-            <button id="delete" type="button">회원탈퇴</button>
-        </div>
-    </div>
-	</form>
-</div>
-<script>
-	$("#update").on("click", function() {
-		$("#name").prop("readonly", "false");
-		$("#phone").prop("readonly", "false");
-		$("#email").prop("readonly", "false");
-	});
-	$("#delete").on("click", function() {
-		href="/member/delete";
-	});
-</script>
+				<div class="bottom">
+
+					<button id="update" type="submit">수정</button>
+					<button id="delete" type="button">회원탈퇴</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<script>
+		$("#update").on("click", function() {
+			$("#name").prop("readonly", "false");
+			$("#phone").prop("readonly", "false");
+			$("#email").prop("readonly", "false");
+		});
+		$("#delete").on("click", function() {
+			href = "/member/delete";
+		});
+	</script>
 </body>
 
 </html>
