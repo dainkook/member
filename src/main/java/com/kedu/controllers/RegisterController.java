@@ -18,7 +18,7 @@ public class RegisterController {
 	
 	@RequestMapping("/signup")
 	public String signup() {
-		return "members/signup";
+		return "member/signup";
 	}
 	
 	@RequestMapping("/register")
