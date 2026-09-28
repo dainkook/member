@@ -43,5 +43,8 @@ public class MemberDAO {
 				id, pw).isEmpty();
 	}
 	
-	public 
+	public MemberDTO listAll(String id) {
+		String sql = "select * from members where id=?";
+		return jdbc.queryForObject(sql, new BeanPropertyRowMapper<>(MemberDTO.class), id);
+	}
 }
