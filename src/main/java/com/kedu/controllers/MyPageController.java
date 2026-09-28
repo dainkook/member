@@ -25,7 +25,7 @@ public class MyPageController {
 	
 	@RequestMapping("delete")
 	public String delete(HttpSession session) {
-		String id = (String) session.getAttribute("id");
+		String id = (String) session.getAttribute("loginId");
 		dao.delete(id);
 		session.invalidate();
 		return "redirect:/";
