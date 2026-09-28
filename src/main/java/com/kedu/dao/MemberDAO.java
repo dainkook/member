@@ -42,4 +42,6 @@ public class MemberDAO {
 				new BeanPropertyRowMapper<>(MemberDTO.class), 
 				id, pw).isEmpty();
 	}
+	
+	public 
 }
