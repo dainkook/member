@@ -21,4 +21,12 @@ public class MyPageController {
 		model.addAttribute("list", dao.listAll(dto));
 		return "mypage";
 	}
+	
+	@RequestMapping("delete")
+	public String delete(HttpSession session) {
+		String id = (String) session.getAttribute("id");
+		dao.delete(id);
+		session.invalidate();
+		return "redirect:/";
+	}
 }
